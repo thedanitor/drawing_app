@@ -6,7 +6,7 @@ This project is from the Day 22 code along video from Udemy's 50 projects in 50 
 
 ### Overall Impression
 
-
+I had no idea there was a canvas element. It also turns out it was not that difficult to use with a little guidance. The key was realizing that you need to start with a circle and create a line that trails it to make a smooth line appear on the screen.
 
 ### Things Learned
 

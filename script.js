@@ -1,8 +1,13 @@
 const canvas = document.getElementById("canvas");
+const increaseBtn = document.getElementById("increase");
+const decreaseBtn = document.getElementById("decrease");
+const sizeEl = document.getElementById("size");
+const colorEl = document.getElementById("color");
+const clearEl = document.getElementById("clear");
 // getContext is canvas method for context type
 const ctx = canvas.getContext("2d");
 
-let size = 20;
+let size = 10;
 // by default isPressed is false
 let isPressed = false;
 let color = "black";
@@ -69,3 +74,34 @@ function drawLine(x1, y1, x2, y2) {
   // stroke method to draw it
   ctx.stroke();
 }
+
+function updateSizeOnScreen() {
+  // text in size span set to value of size variable
+  sizeEl.innerText = size;
+}
+
+// listen for click on increase button
+increaseBtn.addEventListener("click", () => {
+  // if size is less than 50, add 5 to current size, otherwise stay at 50
+  size < 50 ? (size += 5) : (size = 50);
+  updateSizeOnScreen();
+});
+
+// listen for click on decrease button
+decreaseBtn.addEventListener("click", () => {
+  // if size is greater than 5, subtract 5 from current size, otherwise stay at 5
+  size > 5 ? (size -= 5) : (size = 5);
+  updateSizeOnScreen();
+});
+
+// listen for change on colorEl
+colorEl.addEventListener("change", e => {
+  // color becomes value from color picker
+  color = e.target.value;
+});
+
+// listen for click on clear button
+clearEl.addEventListener("click", () => {
+  // clearRect method starting at 0, 0 | ending at full width and height of canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
