@@ -10,3 +10,7 @@ This project is from the Day 22 code along video from Udemy's 50 projects in 50 
 
 ### Things Learned
 
+* HTML has a canvas element that is used to draw on a page
+* input type of color creates a sliding color picker
+* in CSS can select all children of an element with the syntax element > * {}
+

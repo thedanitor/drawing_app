@@ -7,6 +7,7 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     /* Centered horizontally */
@@ -15,8 +16,38 @@ body {
     justify-content: center;
     /* 100% viewport height  */
     height: 100vh;
-    /* don't want scrollbars  */
-    overflow: hidden;
     /* no margins  */
     margin: 0;
+}
+
+canvas {
+    border: 2px solid steelblue;
+}
+
+.toolbox { 
+    background-color: steelblue;
+    border: 1px solid slateblue;
+    display: flex;
+    width: 804px;
+    padding: 1rem;
+}
+
+/* selects all children of .toolbox */
+.toolbox > * {
+    background-color: white;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+    margin: 0.25rem;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+/* selects last child element in .toolbox (clear)*/
+.toolbox > *:last-child {
+    margin-left: auto;
 }
